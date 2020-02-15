@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="scripts/vendor/chartist-js/dist/chartist.min.css">
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/sectionSwitcher.js" defer></script>
+    <script src="scripts/interestCalculation.js" defer></script>
+    <script src="scripts/vendor/chartist-js/dist/chartist.min.js" defer></script>
+    <script src="scripts/chart.js" defer></script>
+
+
+    <link rel="stylesheet" href="main.css" />
+    <title>Simple VS Compound interests</title>
+  </head>
+  <body>
+    <div class="section-holder">
+      <div class="section" id="calculator__section">
+        <form action="" id="calculator">
+          <h2>Compound Interest Calculator</h2>
+          <div class="inputField">
+            <input type="number" required name="base" step="0.10" />
+            <label>Principal</label>
+          </div>
+          <div class="inputField">
+            <input type="number" required name="rate" step="0.10" />
+            <label>Interest rate (%)</label>
+          </div>
+          <div class="inputField">
+            <input type="number" required name="periods" step="1" />
+            <label>Years to grow</label>
+          </div>
+          <div class="inputField">
+            <input type="number" name="tax_per_compound" step="1" value="0" />
+            <label>Tax per Compound</label>
+          </div>
+          <div class="inputField">
+            <select name="compound_frequency">
+                <option value="365">Compound every day</option>
+                <option value="52">Compound every week</option>
+                <option value="12">Compound every month</option>
+                <option value="1" selected>Compound every year</option>
+            </select>
+          </div>
+          <div class="inputField">
+            <select name="addition_frequency">
+                <option value="365">Replenish every day</option>
+                <option value="52">Replenish every week</option>
+                <option value="12">Replenish every month</option>
+                <option value="1">Replenish every year</option>
+                <option value="0" selected>No Replenishment</option>
+            </select>
+        </div>
+        <div class="inputField">
+            <input type="number" name="addition" step="1" value="0" />
+            <label>Addition</label>
+        </div>
+
+          <input type="submit" value="Calculate" />
+        </form>
+      </div>
+      <div class="section" id="result__section">
+          <div id="back_to_calc" class="section_button" data-section="0"> Back to calculation</div>
+          <div id="go_to_chart" class="section_button" data-section="2"> See line chart</div>
+        <div id="recap_table" class="recap"></div>
+      </div>
+    <div class="section" id="chart__section">
+        <div id="back_to_calc" class="section_button" data-section="0"> Back to calculation</div>
+        <div id="recap_chart" class="recap">
+            <h3>How your investment will grow</h3>
+            <div class="ct-chart ct-golden-section" id="chart1"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

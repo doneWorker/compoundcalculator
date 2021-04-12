@@ -144,7 +144,7 @@ body {
   min-width: 300px;
   overflow: scroll;
   display: block;
-  padding: 10px;
+  border: 10px solid white;
   box-sizing: border-box;
 }
 #recap_table tr {
@@ -155,7 +155,10 @@ body {
   line-height: 30px;
 }
 #recap_table tr:nth-child(1) {
+    position: sticky;
+    top: 0;
     border-bottom: 2px solid #3f9570;
+    background: white;
     color: #3f9570;
 }
 #recap_table tr:nth-child(even) {
